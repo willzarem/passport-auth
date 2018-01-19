@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>listado de base datos post con token</title>
+</head>
+<body>
+	<ul>
+		
+
+
+	</ul>
+
+
+	<script>
+		
+(function(){
+		'use strict';
+
+		
+		if (localStorage.getItem('token')){
+
+		fetch('http://localhost:8000/api/posts',{
+		method:'GET',
+		headers:{'Authorization' : 'Bearer ' + localStorage.getItem('token') }
+				})
+						
+		
+						
+				.then( response  => {
+		        return response.json();
+		        
+		    	})
+
+		.then (data => {
+        	
+	        let li='';
+	        data.forEach((post,index) => {
+	        	li += '<li>' + post.title +'    ' +  post.body + '</li>';
+        	 })
+document.querySelector('ul').innerHTML = li;
+
+})
+
+}
+
+
+
+		})();
+
+
+
+
+
+	</script>
+</body>
+</html>

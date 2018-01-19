@@ -1,1 +1,0 @@
-genero.blade.php

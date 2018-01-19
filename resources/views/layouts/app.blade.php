@@ -32,7 +32,9 @@
                      <!--    {{ config('app.name', 'licencias') }}<!--nombre del formulario-->
                     </a>
                     <a class="navbar-brand" href="{{ route('cliente') }}">Registrar</a>
-                    <a class="navbar-brand" href="{{ route('vista') }}">Vista de Datps</a>
+                    <a class="navbar-brand" href="{{ route('vista') }}">vista</a>
+                    <a class="navbar-brand" href="{{ url('/generartoken') }}">Generar Token</a>
+                    
                             </li>
                 </div>
 
